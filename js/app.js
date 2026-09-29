@@ -2,10 +2,12 @@
 const AppData = {
   modules: [
     {title:"Eksplorasi Awal",eyebrow:"Mulai dari masalah",kind:"robot"},
+    {title:"Empat Fondasi",eyebrow:"Kenali Konsep",kind:"foundations"},
     {title:"Dekomposisi",eyebrow:"Pertemuan 1",kind:"decomposition"},
     {title:"Pengenalan Pola",eyebrow:"Pertemuan 2",kind:"pattern"},
     {title:"Abstraksi",eyebrow:"Pertemuan 3",kind:"abstraction"},
     {title:"Algoritma",eyebrow:"Pertemuan 4",kind:"algorithm"},
+    {title:"Latihan Fondasi",eyebrow:"Aktivitas Interaktif",kind:"foundationActivities"},
     {title:"Tantangan Terpadu",eyebrow:"Integrasi",kind:"integrated"},
     {title:"Evaluasi Akhir",eyebrow:"Uji Pemahaman",kind:"quiz"}
   ]
@@ -76,7 +78,9 @@ const App = {
       this.activeDone=true;
       next.disabled=false;
     };
-    if(m.kind==="decomposition") DecompositionModule.render(container,done);
+    if(m.kind==="foundations") FoundationsModule.render(container,done);
+    else if(m.kind==="foundationActivities") FoundationActivitiesModule.render(container,done);
+    else if(m.kind==="decomposition") DecompositionModule.render(container,done);
     else if(m.kind==="pattern") PatternModule.render(container,done);
     else if(m.kind==="abstraction") AbstractionModule.render(container,done);
     else if(m.kind==="algorithm") AlgorithmModule.render(container,done);

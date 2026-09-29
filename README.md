@@ -13,6 +13,13 @@ Aplikasi dibuat **mobile-first**, tanpa backend, dan siap dijalankan sebagai sta
 
 ## Fitur
 
+- Definisi interaktif empat fondasi berpikir komputasional
+- Aktivitas memasangkan pernyataan dengan fondasi tanpa mengetik
+- Latihan pilihan ganda 10 soal berbasis kartu
+- Identifikasi fondasi dari 8 peristiwa sehari-hari
+- Sequence builder “Menyiapkan Tas Sekolah”
+- Aktivitas Benar/Salah 8 pernyataan
+
 - Eksplorasi awal berbasis robot grid
 - Progression dan unlock modul
 - LocalStorage untuk menyimpan progress
@@ -45,6 +52,8 @@ berpikir-komputasional-kelas7/
 │   ├── interactions.js
 │   ├── quiz.js
 │   ├── progress.js
+│   ├── foundations.js
+│   ├── foundation-activities.js
 │   ├── decomposition.js
 │   ├── patterns.js
 │   ├── abstraction.js

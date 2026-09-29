@@ -23,3 +23,12 @@
   .brand strong{font-size:14px}
   .top-progress span{font-size:12px}
 }
+
+
+@media (max-width: 768px){
+  .foundation-grid,.answer-bank{grid-template-columns:1fr}
+  .matched-row{grid-template-columns:1fr}
+  .tf-row{grid-template-columns:1fr}
+  .tf-actions{display:grid;grid-template-columns:1fr 1fr}
+  .tf-btn{min-height:50px}
+}
