@@ -8,7 +8,7 @@ const AppData = {
     {title:"Abstraksi",eyebrow:"Pertemuan 3",kind:"abstraction"},
     {title:"Algoritma",eyebrow:"Pertemuan 4",kind:"algorithm"},
     {title:"Latihan Fondasi",eyebrow:"Aktivitas Interaktif",kind:"foundationActivities"},
-    {title:"Tantangan Terpadu",eyebrow:"Integrasi",kind:"integrated"},
+    {title:"Cara Kerja 4 Fondasi",eyebrow:"Visualisasi Konsep",kind:"foundationFlow"},
     {title:"Evaluasi Akhir",eyebrow:"Uji Pemahaman",kind:"quiz"}
   ]
 };
@@ -85,48 +85,9 @@ const App = {
     else if(m.kind==="abstraction") AbstractionModule.render(container,done);
     else if(m.kind==="algorithm") AlgorithmModule.render(container,done);
     else if(m.kind==="robot") RobotModule.render(container,done);
-    else if(m.kind==="integrated") this.renderIntegrated(container,done);
+    else if(m.kind==="foundationFlow") FoundationFlowModule.render(container,done);
     else if(m.kind==="quiz") QuizModule.render(container,done);
     Navigation.show("learning");
-  },
-  renderIntegrated(container,done){
-    const stages=[
-      ["Dekomposisi","Pecah kegiatan festival menjadi tempat, jadwal, perlengkapan, dan pembagian tugas."],
-      ["Pengenalan Pola","Cari kebutuhan yang sama pada beberapa stan."],
-      ["Abstraksi","Pilih informasi yang benar-benar diperlukan untuk membuat denah."],
-      ["Algoritma","Susun urutan persiapan agar kegiatan dapat berjalan."]
-    ];
-    let current=0;
-    container.innerHTML=`
-      <div class="activity-card">
-        <div class="sticky-objective">🎯 Tantangan: Gunakan empat strategi untuk merencanakan Festival Kelas VII.</div>
-        <div id="integratedStage"></div>
-        <div class="feedback" id="integratedFeedback">Selesaikan tahap satu per satu.</div>
-      </div>`;
-    const renderStage=()=>{
-      const [name,text]=stages[current];
-      container.querySelector("#integratedStage").innerHTML=`
-        <span class="eyebrow">Tahap ${current+1} dari ${stages.length}</span>
-        <h3>${name}</h3><p>${text}</p>
-        <button id="integratedAction" class="primary-btn">Saya sudah memahami tahap ini</button>`;
-      container.querySelector("#integratedAction").addEventListener("click",()=>{
-        current++;
-        if(current>=stages.length){
-          container.querySelector("#integratedStage").innerHTML=`
-            <div class="tree">
-              <div class="tree-root">Masalah Festival Kelas VII</div>
-              <div class="tree-branches">
-                ${stages.map(s=>`<div class="tree-branch">${s[0]}</div>`).join("")}
-              </div>
-            </div>`;
-          const fb=container.querySelector("#integratedFeedback");
-          fb.className="feedback success";
-          fb.textContent="✓ Satu masalah dapat melibatkan beberapa strategi berpikir komputasional. Strateginya tidak selalu harus digunakan dalam urutan yang kaku.";
-          done();
-        }else renderStage();
-      });
-    };
-    renderStage();
   },
   renderProgress(){
     const list=document.getElementById("progressList");

@@ -28,7 +28,7 @@ Aplikasi dibuat **mobile-first**, tanpa backend, dan siap dijalankan sebagai sta
 - Abstraksi melalui pemilahan informasi
 - Sequence builder untuk algoritma
 - Simulasi robot
-- Tantangan terpadu
+- Visualisasi animatif cara kerja empat fondasi
 - Evaluasi acak dari bank soal JSON
 - Breakdown hasil berdasarkan kompetensi
 - Reset progress
@@ -54,6 +54,7 @@ berpikir-komputasional-kelas7/
 │   ├── progress.js
 │   ├── foundations.js
 │   ├── foundation-activities.js
+│   ├── foundation-flow.js
 │   ├── decomposition.js
 │   ├── patterns.js
 │   ├── abstraction.js

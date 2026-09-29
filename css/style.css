@@ -1,17 +1,32 @@
 
 :root{
-  --bg:#f6f8ff;
+  --bg:#f7fbff;
   --surface:#ffffff;
-  --ink:#183153;
-  --muted:#6c7893;
-  --primary:#5568d8;
-  --primary-soft:#e9edff;
-  --green:#dff7e8;
-  --green-ink:#1f6d45;
-  --orange:#fff0dc;
-  --orange-ink:#9a5a13;
-  --border:#dfe5f2;
-  --shadow:0 12px 32px rgba(38,54,93,.10);
+  --ink:#18324a;
+  --muted:#66788a;
+
+  --primary:#4f46e5;
+  --primary-soft:#eef0ff;
+
+  --cyan:#22b8cf;
+  --cyan-soft:#e6faff;
+
+  --teal:#20b486;
+  --teal-soft:#e5f9f2;
+
+  --yellow:#f3b61f;
+  --yellow-soft:#fff7da;
+
+  --coral:#ff7a59;
+  --coral-soft:#fff0eb;
+
+  --green:#e6f8ef;
+  --green-ink:#16734a;
+  --orange:#fff3df;
+  --orange-ink:#9a5b10;
+
+  --border:#dbe6ef;
+  --shadow:0 14px 34px rgba(54,77,104,.11);
   --radius:22px;
 }
 *{box-sizing:border-box}
@@ -51,7 +66,7 @@ main{width:min(1080px,calc(100% - 24px));margin:0 auto}
 .screen.active{display:block}
 .hero-card{
   display:grid;grid-template-columns:1.2fr .8fr;gap:24px;
-  background:linear-gradient(135deg,#ffffff,#eef1ff);
+  background:linear-gradient(135deg,#ffffff 0%,#eef0ff 38%,#e8fbff 72%,#fff5df 100%);
   border:1px solid var(--border);border-radius:30px;padding:28px;box-shadow:var(--shadow)
 }
 .eyebrow{display:inline-block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--primary)}
@@ -181,3 +196,96 @@ p{line-height:1.65;color:var(--muted)}
 .tf-btn.selected{background:var(--primary-soft);border-color:var(--primary);color:var(--primary);font-weight:800}
 .correct-row{background:var(--green);border-color:#aadfbd}
 .incorrect-row{background:var(--orange);border-color:#efc58f}
+
+
+/* ===== Refined colorful learning theme ===== */
+.hero-card{overflow:hidden;position:relative}
+.hero-card::after{
+  content:"";position:absolute;width:220px;height:220px;border-radius:50%;
+  right:-85px;top:-85px;background:rgba(34,184,207,.12);pointer-events:none
+}
+.float-card:nth-child(1){background:var(--primary-soft);border-color:#cfd4ff}
+.float-card:nth-child(2){background:var(--cyan-soft);border-color:#b9edf6}
+.float-card:nth-child(3){background:var(--yellow-soft);border-color:#f5dea0}
+.float-card:nth-child(4){background:var(--teal-soft);border-color:#bcebd9}
+
+.journey-card:nth-child(4n+1){border-top:4px solid var(--primary)}
+.journey-card:nth-child(4n+2){border-top:4px solid var(--cyan)}
+.journey-card:nth-child(4n+3){border-top:4px solid var(--yellow)}
+.journey-card:nth-child(4n+4){border-top:4px solid var(--teal)}
+
+.foundation-card:nth-child(1){background:linear-gradient(180deg,#fff,var(--primary-soft));border-color:#ccd2ff}
+.foundation-card:nth-child(2){background:linear-gradient(180deg,#fff,var(--cyan-soft));border-color:#b9edf6}
+.foundation-card:nth-child(3){background:linear-gradient(180deg,#fff,var(--yellow-soft));border-color:#f2dfa6}
+.foundation-card:nth-child(4){background:linear-gradient(180deg,#fff,var(--teal-soft));border-color:#beeada}
+
+.answer-chip:nth-child(1) span{background:var(--primary);color:white}
+.answer-chip:nth-child(2) span{background:var(--cyan);color:white}
+.answer-chip:nth-child(3) span{background:var(--yellow);color:#5e4700}
+.answer-chip:nth-child(4) span{background:var(--teal);color:white}
+
+.primary-btn{
+  background:linear-gradient(135deg,var(--primary),#665fe9);
+  box-shadow:0 8px 18px rgba(79,70,229,.20)
+}
+.primary-btn:hover{filter:brightness(1.03)}
+.sticky-objective{
+  background:linear-gradient(90deg,#eef0ff,#e8fbff);
+  border-color:#cdd8fa;
+}
+
+/* ===== Animated explanation of 4 foundations ===== */
+.foundation-flow{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px;position:relative
+}
+.foundation-flow-card{
+  position:relative;min-height:220px;border-radius:22px;border:1px solid var(--border);
+  background:white;padding:18px;cursor:pointer;transition:.22s ease;text-align:left
+}
+.foundation-flow-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.foundation-flow-card.active{transform:translateY(-4px);box-shadow:0 14px 28px rgba(54,77,104,.14)}
+.foundation-flow-card:nth-child(1){border-top:5px solid var(--primary)}
+.foundation-flow-card:nth-child(2){border-top:5px solid var(--cyan)}
+.foundation-flow-card:nth-child(3){border-top:5px solid var(--yellow)}
+.foundation-flow-card:nth-child(4){border-top:5px solid var(--teal)}
+.flow-number{
+  width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  font-weight:900;margin-bottom:10px;color:white;background:var(--primary)
+}
+.foundation-flow-card:nth-child(2) .flow-number{background:var(--cyan)}
+.foundation-flow-card:nth-child(3) .flow-number{background:var(--yellow);color:#5c4500}
+.foundation-flow-card:nth-child(4) .flow-number{background:var(--teal)}
+.flow-icon{font-size:32px;display:block;margin-bottom:6px}
+.flow-arrow{
+  position:absolute;right:-19px;top:50%;transform:translateY(-50%);
+  font-size:28px;color:#9ba9ba;z-index:3
+}
+.flow-demo{
+  margin-top:18px;border-radius:22px;border:1px solid var(--border);background:#fbfdff;padding:18px;overflow:hidden
+}
+.demo-stage{display:none}
+.demo-stage.active{display:block;animation:fadeUp .32s ease both}
+.demo-visual{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0
+}
+.demo-chip{
+  padding:10px 12px;border-radius:14px;background:white;border:1px solid var(--border);font-weight:750
+}
+.demo-chip.fade-away{opacity:.35;text-decoration:line-through}
+.demo-chip.highlight{background:var(--yellow-soft);border-color:#efd275}
+.demo-chip.step{background:var(--teal-soft);border-color:#a9dfcd}
+.flow-mini-progress{
+  display:flex;gap:7px;justify-content:center;margin-top:14px
+}
+.flow-dot{width:10px;height:10px;border-radius:50%;background:#d6dce6}
+.flow-dot.active{background:var(--primary);transform:scale(1.25)}
+.flow-controls{display:flex;justify-content:center;gap:10px;margin-top:16px}
+.flow-controls button{min-width:120px}
+
+@media (max-width:768px){
+  .foundation-flow{grid-template-columns:1fr}
+  .foundation-flow-card{min-height:auto}
+  .flow-arrow{
+    position:static;display:block;text-align:center;transform:none;margin:8px 0 -4px
+  }
+}
