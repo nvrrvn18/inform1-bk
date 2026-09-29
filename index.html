@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6f8ff" />
+  <meta name="description" content="Aplikasi pembelajaran interaktif Berpikir Komputasional untuk SMP/MTs Kelas VII." />
+  <title>Berpikir Komputasional Kelas VII</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/animation.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">🧠</span>
+      <div>
+        <strong>Informatika</strong>
+        <small>Berpikir Komputasional</small>
+      </div>
+    </div>
+    <div class="top-progress" aria-label="Progress belajar">
+      <div class="progress-track"><div id="topProgressBar" class="progress-fill"></div></div>
+      <span id="topProgressText">0%</span>
+    </div>
+    <button id="fullscreenBtn" class="icon-btn" aria-label="Layar penuh">⛶</button>
+  </header>
+
+  <main id="app">
+    <section id="home" class="screen active">
+      <div class="hero-card">
+        <div class="hero-copy">
+          <span class="eyebrow">SMP/MTs Kelas VII</span>
+          <h1>Berpikir Komputasional</h1>
+          <p>Belajar memecahkan masalah dengan cara teratur, logis, dan kreatif melalui eksplorasi digital sederhana.</p>
+          <button id="startBtn" class="primary-btn">Mulai Belajar</button>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="float-card">🧩 Pecah</div>
+          <div class="float-card">🔍 Pola</div>
+          <div class="float-card">🎯 Pilih</div>
+          <div class="float-card">🧭 Susun</div>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Perjalanan Belajar</span>
+            <h2>Langkah yang akan kamu tempuh</h2>
+          </div>
+        </div>
+        <div id="journeyGrid" class="journey-grid"></div>
+      </section>
+    </section>
+
+    <section id="learning" class="screen">
+      <div class="module-header">
+        <button id="backHomeBtn" class="ghost-btn">← Beranda</button>
+        <div>
+          <span id="moduleEyebrow" class="eyebrow">Eksplorasi</span>
+          <h2 id="moduleTitle">Eksplorasi Awal</h2>
+        </div>
+      </div>
+
+      <div id="moduleContent"></div>
+
+      <div class="module-actions">
+        <button id="prevModuleBtn" class="ghost-btn">← Sebelumnya</button>
+        <button id="nextModuleBtn" class="primary-btn" disabled>Lanjut →</button>
+      </div>
+    </section>
+
+    <section id="progressScreen" class="screen">
+      <div class="module-header">
+        <button class="ghost-btn nav-home">← Beranda</button>
+        <div>
+          <span class="eyebrow">Progress</span>
+          <h2>Perjalanan Belajarmu</h2>
+        </div>
+      </div>
+      <div class="panel">
+        <div id="progressList" class="progress-list"></div>
+        <button id="resetProgressBtn" class="danger-btn">Reset Progress</button>
+      </div>
+    </section>
+
+    <section id="resultsScreen" class="screen">
+      <div class="module-header">
+        <button class="ghost-btn nav-home">← Beranda</button>
+        <div>
+          <span class="eyebrow">Hasil Belajar</span>
+          <h2>Ringkasan Evaluasi</h2>
+        </div>
+      </div>
+      <div id="resultsContent"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navigasi utama">
+    <button data-nav="home" class="nav-btn active">🏠<span>Beranda</span></button>
+    <button data-nav="learning" class="nav-btn">📘<span>Belajar</span></button>
+    <button data-nav="progressScreen" class="nav-btn">📊<span>Progress</span></button>
+  </nav>
+
+  <script src="js/progress.js"></script>
+  <script src="js/decomposition.js"></script>
+  <script src="js/patterns.js"></script>
+  <script src="js/abstraction.js"></script>
+  <script src="js/algorithms.js"></script>
+  <script src="js/robot.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
